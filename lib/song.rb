@@ -3,7 +3,8 @@ class Song
 
   @@all = []
 
-def initialize(name)
+def initialize(name, artist_name)
+  @artist_name = artist_name
   @name = name
   @@all << self
 end
@@ -23,7 +24,7 @@ def self.create(name)
   #instantiates and saves the song, and it returns the new song that was created
 end
 def self.new_by_name(name)
-self.all.new(@name) #{|song|song.new}
+self.all.new{|song|song.new} #{|song|song.new}
   #instantiates a song with a name property
 end
 def self.create_by_name(name)
