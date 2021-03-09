@@ -28,6 +28,7 @@ self.all.new{|song|song.new} #{|song|song.new}
   #instantiates a song with a name property
 end
 def self.create_by_name(name)
+  self.all.create{|song| song.name == name}
   #instantiates and saves a song with a name property
 end
 def self.find_by_name(name)
