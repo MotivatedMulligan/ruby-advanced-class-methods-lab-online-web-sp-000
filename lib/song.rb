@@ -19,22 +19,22 @@ end
 def self.create(name)
   @name = name
   @@all << self
-  return self
+Song.new(name).tap{|song| song.save}
   #instantiates and saves the song, and it returns the new song that was created
 end
-def self.new_by_name
-
+def self.new_by_name(name)
+@@all.new(name)
   #instantiates a song with a name property
 end
-def self.create_by_name
+def self.create_by_name(name)
   #instantiates and saves a song with a name property
 end
-def self.find_by_name
+def self.find_by_name(name)
   self.all.find{|song| song.name == name}
   #can find a song present in @@all by name
     # returns falsey when a song name is not present in @@all
 end
-def self.find_or_create_by_name
+def self.find_or_create_by_name(name)
  #invokes .find_by_name and .create_by_name instead of repeating code
   #returns the existing Song object (doesn't create a new one)
     # when provided the title of an existing Song D
