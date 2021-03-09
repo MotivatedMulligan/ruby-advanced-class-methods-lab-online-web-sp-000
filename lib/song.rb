@@ -24,7 +24,7 @@ def self.create
   #instantiates and saves the song, and it returns the new song that was created
 end
 def self.new_by_name(name)
-self.all.new{|song|song.new} #{|song|song.new}
+self.all.new(name) #{|song|song.new}
   #instantiates a song with a name property
 end
 def self.create_by_name(name)
