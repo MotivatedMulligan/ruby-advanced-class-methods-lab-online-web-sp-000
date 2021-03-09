@@ -24,9 +24,9 @@ song
 #instantiates and saves the song, and it returns the new song that was created
 end
 
-def self.new_by_name(title)
+def self.new_by_name(name)
 song = self.new
-song.name = title
+song.name = name
 song #{|song|song.new}
   #instantiates a song with a name property
 end
@@ -43,13 +43,19 @@ def self.find_by_name(name)
     # returns falsey when a song name is not present in @@all
 end
 def self.find_or_create_by_name(name)
+  result = self.find_by_name(title)
+     if result
+       result
+     else
+       self.create_by_name(title)
+     end
  #invokes .find_by_name and .create_by_name instead of repeating code
   #returns the existing Song object (doesn't create a new one)
     # when provided the title of an existing Song D
   #creates a new Song object with the provided title if one doesn't already exist
 end
-def self.alphabetical(name)
-  self.all.sort{ |a, b| a <=> b }
+def self.alphabetical
+  sorted = self.all.sort_by{ |song| song.name}
   #returns all the song instances in alphabetical order by song name
 end
 def self.new_from_filename(name, artist_name)
