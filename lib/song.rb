@@ -19,11 +19,11 @@ end
 def self.create(name)
   @name = name
   @@all << self
-#Song.new(name).tap{|song| song.save}
+
   #instantiates and saves the song, and it returns the new song that was created
 end
 def self.new_by_name(name)
-@@all.new(name)
+self.all.new{|song|song.new}
   #instantiates a song with a name property
 end
 def self.create_by_name(name)
