@@ -42,13 +42,14 @@ def self.find_or_create_by_name(name)
     # when provided the title of an existing Song D
   #creates a new Song object with the provided title if one doesn't already exist
 end
-def self.alphabetical
+def self.alphabetical(name)
+  self.all.sort{ |a, b| b <=> a }
   #returns all the song instances in alphabetical order by song name
 end
-def self.new_from_filename
+def self.new_from_filename(name, artist_name)
   #initializes a song and artist_name based on the filename format
 end
-def self.create_by_filename
+def self.create_by_filename(name, artist_name)
   #initializes and saves a song and artist_name based on the filename forma
 end
 def self.destroy_all
