@@ -3,11 +3,11 @@ class Song
 
   @@all = []
 
-def initialize(name, artist_name)
-  @artist_name = artist_name
-  @name = name
-  @@all << self
-end
+#def initialize(name, artist_name)
+#  @artist_name = artist_name
+#  @name = name
+  #@@all << self
+#end
 
   def self.all
     @@all
@@ -16,18 +16,24 @@ end
   def save
     self.class.all << self
   end
-
+##########
 def self.create
-  @name = name
-  @@all << self
-
-  #instantiates and saves the song, and it returns the new song that was created
+song = self.new
+self.name << song
+song
+#instantiates and saves the song, and it returns the new song that was created
 end
-def self.new_by_name(name)
-self.all.new(name) #{|song|song.new}
+
+def self.new_by_name(title)
+song = self.new
+song.name = title
+song #{|song|song.new}
   #instantiates a song with a name property
 end
-def self.create_by_name(name)
+def self.create_by_name(title)
+  song = self.create
+  song.name = title
+  song
   #self.all.create{|song| song.name == name}
   #instantiates and saves a song with a name property
 end
@@ -47,12 +53,17 @@ def self.alphabetical(name)
   #returns all the song instances in alphabetical order by song name
 end
 def self.new_from_filename(name, artist_name)
-  #initializes a song and artist_name based on the filename format
+  song = self.new
+  song.name = title
+  song#initializes a song and artist_name based on the filename format
 end
 def self.create_by_filename(name, artist_name)
-  #initializes and saves a song and artist_name based on the filename forma
+  song = self.create
+  song.name = title
+  song#initializes and saves a song and artist_name based on the filename forma
 end
 def self.destroy_all
+  self.clear
   #clears all the song instances from the @@all array
 end
 
