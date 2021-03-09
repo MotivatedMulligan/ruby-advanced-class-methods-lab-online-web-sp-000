@@ -63,7 +63,7 @@ def self.create_by_filename(name, artist_name)
   song#initializes and saves a song and artist_name based on the filename forma
 end
 def self.destroy_all
-  self.clear
+  @@all.clear
   #clears all the song instances from the @@all array
 end
 
