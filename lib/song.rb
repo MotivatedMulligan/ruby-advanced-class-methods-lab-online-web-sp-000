@@ -28,7 +28,7 @@ self.all.new{|song|song.new} #{|song|song.new}
   #instantiates a song with a name property
 end
 def self.create_by_name(name)
-  self.all.create{|song| song.name == name}
+  #self.all.create{|song| song.name == name}
   #instantiates and saves a song with a name property
 end
 def self.find_by_name(name)
@@ -43,7 +43,7 @@ def self.find_or_create_by_name(name)
   #creates a new Song object with the provided title if one doesn't already exist
 end
 def self.alphabetical(name)
-  self.all.sort{ |a, b| b <=> a }
+  self.all.sort{ |a, b| a <=> b }
   #returns all the song instances in alphabetical order by song name
 end
 def self.new_from_filename(name, artist_name)
