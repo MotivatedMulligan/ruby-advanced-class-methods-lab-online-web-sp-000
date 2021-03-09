@@ -69,9 +69,9 @@ def self.new_from_filename(filename)
 end
 def self.create_by_filename(filename)
   result = self.new_from_filename(filename)
-  song = self.new
-  song.name = result.name
-  song.artist_name = result.artist_name
+  song = self.create
+  song.name = result.name[1]
+  song.artist_name = result.artist_name[0]
   song#initializes and saves a song and artist_name based on the filename forma
 end
 def self.destroy_all
