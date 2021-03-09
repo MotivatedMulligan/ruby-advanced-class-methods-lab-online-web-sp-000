@@ -19,7 +19,7 @@ class Song
 ##########
 def self.create
 song = self.new
-self.name << song
+self.all << song
 song
 #instantiates and saves the song, and it returns the new song that was created
 end
