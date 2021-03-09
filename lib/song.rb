@@ -30,9 +30,9 @@ song.name = name
 song #{|song|song.new}
   #instantiates a song with a name property
 end
-def self.create_by_name(title)
+def self.create_by_name(name)
   song = self.create
-  song.name = title
+  song.name = name
   song
   #self.all.create{|song| song.name == name}
   #instantiates and saves a song with a name property
@@ -43,11 +43,11 @@ def self.find_by_name(name)
     # returns falsey when a song name is not present in @@all
 end
 def self.find_or_create_by_name(name)
-  result = self.find_by_name(title)
+  result = self.find_by_name(name)
      if result
        result
      else
-       self.create_by_name(title)
+       self.create_by_name(name)
      end
  #invokes .find_by_name and .create_by_name instead of repeating code
   #returns the existing Song object (doesn't create a new one)
@@ -60,12 +60,12 @@ def self.alphabetical
 end
 def self.new_from_filename(name, artist_name)
   song = self.new
-  song.name = title
+  song.name = name
   song#initializes a song and artist_name based on the filename format
 end
 def self.create_by_filename(name, artist_name)
   song = self.create
-  song.name = title
+  song.name = name
   song#initializes and saves a song and artist_name based on the filename forma
 end
 def self.destroy_all
